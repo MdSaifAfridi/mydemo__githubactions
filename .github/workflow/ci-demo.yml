@@ -1,0 +1,25 @@
+name: GitHub Actions Demo  # Workflow name
+
+on: 
+  push: 
+    branches: [main]  # Runs on push to the main branch
+  pull_request:        # Runs on PRs
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # Fetches your code
+
+      - name: Print a Message
+        run: echo "Hello, GitHub Actions!"
+
+      - name: List Files
+        run: ls -la  # Lists all files in the repo
+
+      - name: Run a Simple Script
+        run: |
+          echo "This is a multi-line script"
+          echo "You can add more commands here!"
